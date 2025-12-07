@@ -1,0 +1,9 @@
+Project Files for How To Make A Circular Progress Bar With Html Css and Javascript
+
+Thanks for watching my videos. Remember to subscribe and leave a like. 
+Also, share my videos with your friends.
+
+Note: The fonts might not be the same if you don't have Poppins installed on
+your machine
+
+Thanks for the support

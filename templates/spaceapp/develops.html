@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <title>Develops</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon"/>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'css/style_develops.css' %}"/>
+   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+   <body>
+    <div class="content-box">
+    <header>
+        <div class="All_header_menu">
+            <div class="logo">
+                <a href="{% url 'spaceapp:base' %}"><h1>ElectroCore Space Project</h1></a>
+				</div>
+            <div class="top_menu">
+                <ul>
+					<li><a href="{% url 'spaceapp:project' %}">Наш проект</a></li>
+					<li><a href="{% url 'spaceapp:develops' %}">Разработки</a></li>
+                    <li><a href="{% url 'spaceapp:feedback' %}">Обратная связь</a></li>
+                </ul>
+			</div>
+		</div>
+        <div class="wrapper">
+			<form action="{% url 'spaceapp:search' %}" method="get">
+            <div class="search_box">
+				<div class="search_btn"><input type="image" src="{% static 'img/sear_icon.png' %}" alt="search" width="25px" height="25px"/></div>
+				<input type="text" class="input_search" placeholder="Поиск">
+            </div>
+        </div>
+	</form>
+	</header>
+    <div class="background_article">
+    <div class="second_background_article">
+    <div class="article">
+        <img src="{% static 'img/electro_logo.png' %}" alt="electro_logo_img"/>
+        <p>Наш проект разрабатывет, обучает и совершенствует ИИ, а также изготовливает и программирует микросборки, процессоры и другие изделия для передовых спутников.
+        Разработанное программное обеспечения и собранные микросборки уже успешно применяются в спутниках нового поколения.
+        Благодаря нашим разработкам было совершенно несколько открытий в нашей солнечной системе и за ее пределами!</p>
+    </div>
+    <div class="article_1">
+        <img src="{% static 'img/iris.jpg' %}" alt="iris_img" style="margin-top: 10px" "margin-bottom: 10px"/>
+        <p>Спутники серии <b>IRIS XX-19</b> работают в качестве телескопа и передают фото и информацию в космические центры на Земле.
+        Спутники выведены на орбиту Земли, Марса, Глизе 504b и Кеплер 22b. В спутниках этой серии успешно и надежно функционирую наши микросборки. 
+        Основная задача микросборок- это скоростная передача информации и фото без потери качества. Наша разработка признана самой эффективной
+        и перспективной!</p>
+        <img src="{% static 'img/kit.jpg' %}" alt="kit_img" style="margin-top: 10px" "margin-bottom: 10px"/>
+        <p>Спутник <b>KIT ML-2000</b> на данный момент существует единственном экземпляре. Основная его задача это спектральный анализ далеких планет,
+        формирование приблизителых ландшафтов планеты, состава атмосферы, температуры поверхности планеты и поиск возможные полезные ископаемые. 
+        Мы с особой ответственность подошли к разработке программного обеспечения для данного вида аппаратуры. 
+        Проект разработал процессор для подобного рода задач. Процессор разботает при помощи ИИ Chimaira,
+        это нужно для того чтобы получать точные данные. Данный тип спутника проанализировал планету GJ504b и мы имеем примерное представление о ее поверхности.</p>
+        <img src="{% static 'img/tesa.jpeg' %}" alt="tesa_img" style="margin-top: 10px" "margin-bottom: 10px"/>
+        <p>Серия спутников <b>TESA IIX-p</b> производится массово. Их основная задача поиск полезных ископаемых.
+        В солнечной системы насчитывается не менее ста функционирующих спутников этого типа. Также эти спутники вывели на орбиты планет лизе 504b и Кеплер 22b
+        для поиска полезных ископаемых и формирование данных о приблизительном количестве и типе ископаемых. Мы разработали антенну данного спутника, а также
+        обучили ИИ Nimro для реализации данной задачи. Уже сейчас мы в режиме онлайн передаем данный компаниям добывающей промышленности и обсужаем возможные
+        варианты развития плана по освоению и добычи ископаемых на новых планетах!
+        </p>
+    </div>
+</div>
+</div>
+    <div class="footer_develops_page">
+        <p>Вся информация, представленная на сайте, является вымышленной любые совпадния случайны.
+            <p>Designed by SvPr1993</p>
+            <p><img src="{% static 'img/logo.png' %}" alt="logo"width="20px" height="20px" style="margin-bottom: -2px"/>ElectroCore Space Project &copy</p>
+            </div>
+            <div class="images_footer">
+                <a href="https://www.nasa.gov/"><img src="{% static 'img/nasa_logo.png' %}" alt="nasa" width="55px" height="55px"/></a>
+                <a href="https://www.spaceappx.com/"><img src="{% static 'img/space_x_logo.png' %}" alt="space_x_logo" width="65px" height="65px"/></a>
+                <a href="https://global.jaxa.jp/"><img src="{% static 'img/jaxa_logo.png' %}" alt="jaxa" width="55px" height="55px"/></a>
+                <a href="https://www.esa.int/"><img src="{% static 'img/ESA_logo.png' %}" alt="ESA" width="75px" height="65px"/></a>
+        </div>
+    </body>
+    </html>

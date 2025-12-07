@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Century Gothic;
+  } 
+body {
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+  }
+.content-box{
+    background-color: #dbdbdb;
+    border: 1px solid #dbdbdb;
+    max-width: 1240px;
+    height: 1165px;
+    justify-content: center;
+    margin-left: 350px;
+    box-shadow: 0 0 5px 2px;
+    color: white;
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    padding-top: 20px;
+  }
+  
+.logo, .top_menu {
+    display: inline-block;
+    margin-right: 30px;
+  }
+  
+.top_menu li {
+    margin-right: 20px;
+    margin-top: 8px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .top_menu a {/*Расположение текста меню на главной странице*/
+    /*блок а привязвывется к конкетной ссылки, иначе анимаия будет разпростанятся на все, где есть тег а*/
+    vertical-align: middle;
+    font-family: Century Gothic;
+    color: rgb(97, 97, 97);
+    text-decoration: none;
+    position: relative;
+    color: #484848;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+
+.top_menu a::before {/*Весь блок а - это плавное подчеркивание*/
+    content: '';
+    position: absolute;
+    left: 0; bottom: -5px;
+    width: 0;
+    height: 1.5px;
+    background-color: rgb(0, 0, 0);
+}
+
+.top_menu a:hover:before {
+    width: 100%;
+}
+
+.top_menu a::before {
+    transition: width 0.35s;
+}
+
+.top_menu a:hover{/*цвет текста при наведении курсора на него*/
+  color: black;
+}
+  
+.top_menu a:hover{/*цвет текста при наведении курсора на него*/
+    color: black;
+  }
+  
+.logo {/*Расположение и свойства логотипа на главной странице*/
+    font-family: Century Gothic;
+    font-size: 15px;
+    color: gray;
+    vertical-align: middle;
+  }
+.logo a {/*Это свойство убирает подчеркивание и устанавливает нужный цвет лототипа и надписи Electrocore Space Project*/
+  text-decoration: none;
+  color: gray;
+}
+
+h1{
+    background: url("..static/img/logo.png") no-repeat;
+    background-size: 33px;
+    padding-left: 36px;
+}
+  /*Блок search все что отностится к иконки и строке поиск*/
+.wrapper{
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.search_box{/*Свойства внешнего серого фона*/
+    background: #9f9fa0;
+    position: relative;
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    height: 40px;
+}
+  
+.search_box .search_btn{/*свойства иконки внутри серого поля*/
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #b3b3b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+    margin-top: -10px;
+}
+  
+.search_box .input_search[type=search]{/*Строка поиска внутри серого фона*/
+    outline: none;
+    border: 0;
+    background: #ffffff;
+    border-radius: 50px;
+    padding: 15px 10px;
+    width: 200px; 
+    height: 25px;
+    color: #292929;
+    margin-top: -10px;
+    font-size: 15px;
+}
+  
+::placeholder[type=search] {
+    color: #0c0c0c;
+}
+  
+::-webkit-input-placeholder {
+    color: #fff;
+}
+  
+:-ms-input-placeholder {
+    color: #ffffff;
+}
+
+.container{/*Размеры формы обратной связи*/
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{/*Размер формы обращения и ее центрирование и внешний вид*/
+    width: 768px;
+    padding: 80px 60px 100px;
+    background: rgba(15, 15, 15, 0.3);
+    backdrop-filter: blur(3.4px);
+    border: 1px solid rgba(150, 150, 150, 0.3);
+    margin-bottom: 150px;
+    overflow: hidden;
+}
+h2{/*Основные свойства второго абзаца и самой формы*/
+    font-size: 36px;
+    text-align: center;
+    color: black; 
+    overflow: hidden;
+}
+.data_block{/*Свойства блока с ФИО, Email и телефон, расстояния между строками и тд*/
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    row-gap: 35px;
+}
+input{/*Свойства текста с ФИО, Email, цвет, размер и расположение*/
+    color:black;
+    background: transparent;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding-left: 20px;
+    font-size: 24px;
+}
+input::placeholder[type=text]{/*Размер шрифта и цвет текста ФИО, Email и телефон*/
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+}
+input:focus::placeholder{/*Цвет блока с отправкой самого сообщения*/
+    color: black;
+}
+input:focus{/*Свойсто убирает рамку при наведение курсора на ИО, Email и телефон при введение текста*/
+    outline: none;
+}
+.name{/*Ширина белой полоски под ФИО/Организация*/
+    width: 100%;
+}
+.mail{/*Ширина белой полоски под Email*/
+    width: 290px;
+}
+.phone{/*Ширина белой полоски под Телефон*/
+    width: 290px;
+}
+
+.text_area{/*Свойства для класса для формы заполнения сообщения*/
+    margin-top: 65px;
+    border: 1px solid #ffff;
+    border-radius: 13px;
+    padding: 20px, 25px;
+    display: flex;
+    flex-direction: column;
+}
+.message{/*Свойства и размер текста "Сообщение"*/
+    margin-left: 5px;
+    font-size: 24px;
+    color: black;
+}
+textarea{/*Свойства и размер рамки, куда вводится текст обращения*/
+    margin-top: 20px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    margin-left: 5px;
+}
+textarea:focus{/*Цветовые свойства рамки с текстом*/
+    outline: none;
+}
+.send{/*Свойство рамки "Отправить"*/
+    width: 100%;
+    text-align: right;
+}
+button{/*Свойство рамки "Отправить"*/
+    padding: 15px 50px;
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+    border-radius: 50px;
+    border: 1px solid white;
+    margin-top: 40px; 
+    background: gray;
+}
+button:hover{/*Цвет рамки "Отправить"*/
+    background: #0000008a;
+}
+button:active{/*Анимания рамки "Отправить" при нажатие на нее*/
+    transform: translateY(2px);
+}
+/*Стиль и расположение авторский прав*/
+.footer_feedback_page{
+    color:rgb(97, 97, 97);
+    font-size: 13.5px;
+    text-align: center;
+    margin-top: 35px;
+}
+.images_footer{/*Свойства изображений футера*/
+  display: inline;
+  align-items: right;
+  float: right;
+  margin-top: -60px;
+}

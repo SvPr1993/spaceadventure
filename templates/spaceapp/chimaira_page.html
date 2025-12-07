@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+   <title>Chimaira</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no»"/>
+   <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon"/>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'css/style_chimaira_page.css' %}">
+   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+   <body>
+    <div class="content-box">
+    <header>
+        <div class="All_header_menu">
+            <div class="logo">
+                <a href="{% url 'spaceapp:base' %}"><h1>ElectroCore Space Project</h1></a>
+				</div>
+            <div class="top_menu">
+                <ul>
+					<li><a href="{% url 'spaceapp:project' %}">Наш проект</a></li>
+					<li><a href="{% url 'spaceapp:develops' %}">Разработки</a></li>
+                    <li><a href="{% url 'spaceapp:feedback' %}">Обратная связь</a></li>
+                </ul>
+			</div>
+		</div>
+        <div class="wrapper">
+            <div class="search_box">
+                <div class="search_btn"><input type="image" src="{% static 'img/sear_icon.png' %}" alt="search" width="25px" height="25px"/></div>
+                <input type="search" class="input_search" placeholder="Поиск" font-size="15px">
+            </div>
+        </div>
+	</header>
+    <div class="background_article">
+    <div class="article">
+        <img src="{% static 'img/chimaira_page.png' %}" alt="chimaira_page" style="margin-bottom: 10px"/>
+      <p><b>Исскуственный интелект Chimaira</b> на данный момент является самым передовым ИИ для космических исследований.</p>
+      <p>Основная задача ИИ Chimaira - это поиск, анализ и скоростная передача данных дальних планет. Если ИИ Nirmo нужна
+        непосредственная близость к исследуемой планете или иному объекту, ИИ Chimaira может исследовать космические объекты
+        на большом расстоянии. Единиственный минус ИИ Chimaira это только, что получаемые данные точны лишь на 50-60%.
+        Тем не менее этих данных хватило для начала проведения экспедиций на Кеплер 22b и GJ504b. Если данные совпадут с
+        предварительными, то мы сможем улучшить ИИ Chimaira для проведения последующих исследований дальнего космоса.
+        ИИ Chimaira будет пременен впервые, но мы уверены, что он проявит себя только с положительной стороны.
+        Наша команда очень много работала для того чтобы усовершенствованть ИИ Chimaira до совершенства.
+        В случае успеха обоих миссий мы сможем исследовать дальние планеты и совершить новейшие открытия.
+        Мы возлагаем огромную надежду на экспедицию на Кеплер, так как ИИ будет осуществлять высдаку и сбор данных
+        на поверхности самостоятельно. Если все пройдет успешно - это станет революцией в мире IT технологий!
+      </p>
+    </div>
+</div>
+    <div class="footer_chimaira_page">
+        <p>Вся информация, представленная на сайте, является вымышленной любые совпадния случайны.
+        <p>Designed by SvPr1993</p>
+        <p><img src="{% static 'img/logo.png' %}" alt="logo"width="20px" height="20px" style="margin-bottom: -2px"/>ElectroCore Space Project &copy</p>
+        </div>
+        <div class="images_footer">
+            <a href="https://www.nasa.gov/"><img src="{% static 'img/nasa_logo.png' %}" alt="nasa" width="55px" height="55px"/></a>
+            <a href="https://www.spaceappx.com/"><img src="{% static 'img/space_x_logo.png' %}" alt="space_x_logo" width="65px" height="65px"/></a>
+            <a href="https://global.jaxa.jp/"><img src="{% static 'img/jaxa_logo.png' %}" alt="jaxa" width="55px" height="55px"/></a>
+            <a href="https://www.esa.int/"><img src="{% static 'img/ESA_logo.png' %}" alt="ESA" width="75px" height="65px"/></a>
+        </div>
+    </div>
+</body>
+</html>

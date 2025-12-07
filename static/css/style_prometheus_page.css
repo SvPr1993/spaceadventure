@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Century Gothic;
+  } 
+  body {
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+  }
+  .content-box{
+    background-color: #dbdbdb;
+    border: 1px solid #dbdbdb;
+    max-width: 1240px;
+    height: 1030px;
+    justify-content: center;
+    margin-left: 350px;
+    box-shadow: 0 0 5px 2px;
+    color: white;
+    min-height: 100%;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    padding-top: 20px;
+  }
+  
+  .logo, .top_menu {
+    display: inline-block;
+    margin-right: 30px;
+  }
+  
+  .top_menu li {
+    margin-right: 20px;
+    margin-top: 8px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .top_menu a {/*Расположение текста меню на главной странице*/
+    /*блок а привязвывется к конкетной ссылки, иначе анимаия будет разпростанятся на все, где есть тег а*/
+    vertical-align: middle;
+    font-family: Century Gothic;
+    color: rgb(97, 97, 97);
+    text-decoration: none;
+    position: relative;
+    color: #484848;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+
+.top_menu a::before {/*Весь блок а - это плавное подчеркивание*/
+    content: '';
+    position: absolute;
+    left: 0; bottom: -5px;
+    width: 0;
+    height: 1.5px;
+    background-color: rgb(0, 0, 0);
+}
+
+.top_menu a:hover:before {
+    width: 100%;
+}
+
+.top_menu a::before {
+    transition: width 0.35s;
+}
+
+.top_menu a:hover{/*цвет текста при наведении курсора на него*/
+  color: black;
+}
+  
+  .top_menu a:hover{/*цвет текста при наведении курсора на него*/
+    color: black;
+  }
+  
+.logo {/*Расположение и свойства логотипа на главной странице*/
+    font-family: Century Gothic;
+    font-size: 15px;
+    color: gray;
+    vertical-align: middle;
+  }
+.logo a {/*Это свойство убирает подчеркивание и устанавливает нужный цвет лототипа и надписи Electrocore Space Project*/
+  text-decoration: none;
+  color: gray;
+}
+h1{
+    background: url("..static/img/logo.png") no-repeat;
+    background-size: 31px;
+    padding-left: 36px;
+  }
+  /*Блок search все что отностится к иконки и строке поиск*/
+  .wrapper{
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search_box{/*Свойства внешнего серого фона*/
+    background: #9f9fa0;
+    position: relative;
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    height: 40px;
+  }
+
+  .search_box .search_btn{/*свойства иконки внутри серого поля*/
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #b3b3b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+    margin-top: -10px;
+  }
+  
+  .search_box .input_search{/*Строка поиска внутри серого фона*/
+    outline: none;
+    border: 0;
+    background: #ffffff;
+    border-radius: 50px;
+    padding: 15px 10px;
+    width: 200px; 
+    height: 25px;
+    color: #9c9c9c;
+    margin-top: -10px;
+    font-size: 15px;
+  }
+  
+  ::placeholder {
+    color: #0c0c0c;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #fff;
+  }
+  
+  :-ms-input-placeholder {
+    color: #ffffff;
+  }
+  .background_article{/*Свойства фона контента*/
+    background-image: linear-gradient(180deg, rgb(104, 105, 90) 18%, rgb(201, 212, 212) 64%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    width: 1240px;
+    height: 800px;
+  }
+  .article{
+    margin-left: 20%;
+    padding: 2%;
+    text-align: justify;
+    color:rgb(22, 22, 22);
+    position: relative;
+    background: rgba(73, 73, 73, 0.3);;
+    backdrop-filter: blur(3.4px);
+    border: 1px solid rgba(150, 150, 150, 0.3);
+    width: 750px;
+    height: 799px;
+  }
+/*Свойство изображения к статье*/
+  .article img{
+    width: 700px;
+    height: 400px;
+    box-shadow: 0 0 5px 2px;
+    position: relative;
+  }
+  /*Стиль и расположение авторский прав*/
+  .footer_prometheus_page{
+    color:rgb(97, 97, 97);
+    font-size: 13.5px;
+    text-align: center;
+    margin-top: 35px;
+  }
+  .images_footer{/*Свойства изображений футера*/
+    display: inline;
+    align-items: right;
+    float: right;
+    margin-top: -50px;
+  }
