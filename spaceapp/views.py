@@ -3,6 +3,7 @@ import json
 from django.shortcuts import render
 
 from spaceapp.dto import OutputDTO, InputDTO
+from spaceapp.models import Font
 from spaceapp.usecase import save_user_data, upper_string
 
 
@@ -28,6 +29,9 @@ def GJ504b_page(request):
 
 
 def kepler_page(request):
+    fonts = Font.objects.all()
+    print(fonts)
+    context = {"User0": "Font0"}
     # Переменная form_data содержит данные введенные пользователем на странице
     if request.method == "POST":
         name = request.POST.get("name")
@@ -36,10 +40,11 @@ def kepler_page(request):
         print("DTO", result_upper_string)
     else:
         pass
-    return render(request, 'spaceapp/kepler_page.html')
+    return render(request, 'spaceapp/kepler_page.html', context)
 
 
-# Нужно сделать метод upper() для нового типа данных InputDTO и OutputDTO
+# Прокинуть шрифты с admin на фронт, чтобы отоброжались введеные шрифты и сделать так чтобы список выплывал во фронте
+# Сохранение введенных данных в админ панель
 
 def gliese_page(request):
     return render(request, 'spaceapp/gliese_page.html')
