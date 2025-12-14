@@ -59,12 +59,18 @@
           <input class="form_input" type="text" name="name" placeholder="Введите Ваши имя и фамилию" align="center" maxlength="21">
           <select class="font_input">
             <option value="">Выберете шрифт</option>
+              {% for font in fonts %}
+              <option value="{{ font.id }}">
+                {{ font }}
+            </option>
+        {% endfor %}
+              </select>
           </select>
           <label class="form_label"></label>
       <h3>Внимание! Введенные имя и фамилия не должны превышать более 21 символа.</h3>
       <div class="send">
       <input type="submit" align="center" value="Отправить">
-  </form>
+      </form>
 </div>
 </div>
 </div>
