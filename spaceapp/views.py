@@ -1,8 +1,9 @@
 import json
 
+from django.http import HttpResponse
 from django.shortcuts import render
-
 from spaceapp.dto import OutputDTO, InputDTO
+from spaceapp.forms import KeplerUserForm
 from spaceapp.models import Font
 from spaceapp.usecase import save_user_data, upper_string
 
@@ -31,19 +32,35 @@ def GJ504b_page(request):
 def kepler_page(request):
     fonts = Font.objects.all()
     print(fonts)
-    context = {"User0": "Font0"}
     # Переменная form_data содержит данные введенные пользователем на странице
     if request.method == "POST":
+        form = KeplerUserForm(request.POST)
+        if form.is_valid():
+            print("Форма валидна")
+            instance = form.save(commit=False)
+            print(f"Экземпляр перед сохранением: {instance.__dict__}")
+            instance.save()
+            print(f"Сохранено с ID: {instance.id}")
+        else:
+            print("Форма невалидна. Ошибки:", form.errors)
+
         name = request.POST.get("name")
-        input_dto = InputDTO(name=name, font="Times New Romans")
+        input_dto = InputDTO(name=name, font="font")
         result_upper_string = upper_string(input_dto)
         print("DTO", result_upper_string)
+
     else:
-        pass
+        form = KeplerUserForm()
+
+    context = {
+        "fonts": fonts,
+        "form": form,
+    }
+
     return render(request, 'spaceapp/kepler_page.html', context)
 
 
-# Прокинуть шрифты с admin на фронт, чтобы отоброжались введеные шрифты и сделать так чтобы список выплывал во фронте
+# Прокинуть шрифты с admin на фронт, чтобы отоброжались введеные шрифты и сделать так чтобы список выплывал во фронте+
 # Сохранение введенных данных в админ панель
 
 def gliese_page(request):
