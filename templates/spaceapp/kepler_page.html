@@ -52,27 +52,27 @@
 <div class="modal hidden">
   <button type="button" class="close-modal">&times;</button>
   <div class="modal_style">
-      <form class="form" target="" method="post">
+      <form class="form" target="" method="post" action=" ">
           {% csrf_token %}
         <h2 class="form_title">Ввод данных</h2>
         <div class="form_group">
-          <input class="form_input" type="text" name="name" placeholder="Введите Ваши имя и фамилию" align="center" maxlength="21">
-          <select class="font_input">
+          <input class="form_input" type="text" name="user_name" placeholder="Введите Ваши имя и фамилию" align="center" maxlength="21">
+          <select class="font_input" name="font">
             <option value="">Выберете шрифт</option>
               {% for font in fonts %}
               <option value="{{ font.id }}">
                 {{ font }}
             </option>
-        {% endfor %}
-              </select>
+            {% endfor %}
           </select>
           <label class="form_label"></label>
-      <h3>Внимание! Введенные имя и фамилия не должны превышать более 21 символа.</h3>
-      <div class="send">
-      <input type="submit" align="center" value="Отправить">
+        </div>
+        <h3>Внимание! Введенные имя и фамилия не должны превышать более 21 символа.</h3>
+        <div class="send">
+          <input type="submit" align="center" value="Отправить">
+        </div>
       </form>
-</div>
-</div>
+  </div>
 </div>
 </div>
 <div class="overlay hidden"></div>
