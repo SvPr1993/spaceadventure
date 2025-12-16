@@ -1,4 +1,4 @@
-from spaceapp.repo import repo_save_user_data
+from spaceapp.repo import repo_save_user_data, repo_get_all_fonts
 from spaceapp.dto import InputDTO, OutputDTO
 
 
@@ -15,3 +15,8 @@ def upper_string(input_data: InputDTO) -> OutputDTO:
     font = font.upper()
     output_dto = OutputDTO(name=name, font=font)
     return output_dto
+
+
+def usecase_get_all_fonts():
+    fonts = repo_get_all_fonts()
+    return fonts

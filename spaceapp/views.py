@@ -1,11 +1,12 @@
 import json
+import traceback
 
 from django.http import HttpResponse
 from django.shortcuts import render
 from spaceapp.dto import OutputDTO, InputDTO
 from spaceapp.forms import KeplerUserForm
 from spaceapp.models import Font
-from spaceapp.usecase import save_user_data, upper_string
+from spaceapp.usecase import save_user_data, upper_string, usecase_get_all_fonts
 
 
 # Весь блок генерирует страницы html
@@ -30,24 +31,30 @@ def GJ504b_page(request):
 
 
 def kepler_page(request):
-    fonts = Font.objects.all()
-    print(fonts)
+    fonts = usecase_get_all_fonts()
     # Переменная form_data содержит данные введенные пользователем на странице
     if request.method == "POST":
-        form = KeplerUserForm(request.POST)
-        if form.is_valid():
-            print("Форма валидна")
-            instance = form.save(commit=False)
-            print(f"Экземпляр перед сохранением: {instance.__dict__}")
-            instance.save()
-            print(f"Сохранено с ID: {instance.id}")
-        else:
-            print("Форма невалидна. Ошибки:", form.errors)
-
-        name = request.POST.get("name")
-        input_dto = InputDTO(name=name, font="font")
+        name = request.POST.get("user_name")
+        font = request.POST.get("font")
+        input_dto = InputDTO(name=name, font=font)
         result_upper_string = upper_string(input_dto)
         print("DTO", result_upper_string)
+
+        # Дальше идет мой новый код с сохранением формы в джанго админ
+        form = KeplerUserForm(request.POST)
+
+        if form.is_valid():
+            try:
+                form.save()
+
+            except Exception as e:
+                print(f"❌ Ошибка при сохранении: {e}")
+                print(f"Трассировка: {traceback.format_exc()}")
+
+        else:
+            print("❌ Форма невалидна")
+            print("Ошибки:", form.errors.as_json())
+            print("POST данные:", request.POST)
 
     else:
         form = KeplerUserForm()
@@ -59,9 +66,7 @@ def kepler_page(request):
 
     return render(request, 'spaceapp/kepler_page.html', context)
 
-
-# Прокинуть шрифты с admin на фронт, чтобы отоброжались введеные шрифты и сделать так чтобы список выплывал во фронте+
-# Сохранение введенных данных в админ панель
+# Прочитать про интерфейсы в книге чистая архитектура (ОБЯЗАТЕЛЬНО!)
 
 def gliese_page(request):
     return render(request, 'spaceapp/gliese_page.html')
