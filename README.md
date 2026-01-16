@@ -13,7 +13,6 @@
  - возможность выбора шрифта для внесенных данных.
 
 
-<img src=templates/img/![img.png](img.png)>
 <img src=templates/img/ScreenshotGliese581c.png/>
 <img src=templates/img/ScreenshotKepler.png/>
 <img src=templates/img/ScreenshotKepler-22b.png/>
