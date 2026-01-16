@@ -14,6 +14,7 @@
 
 
 <img src=templates/img/![img.png](img.png)>
-<img src=templates/img/Screenshot 2026-01-16 at 21-10-42 Gliese581c/>
-<img src=templates/img/Screenshot 2026-01-16 at 21-11-32 Kepler-22b>
-<img src=templates/img/Screenshot 2026-01-16 at 21-13-46 Kepler-22b>
+<img src=templates/img/Screenshot2026Gliese581c/>
+<img src=templates/img/Screenshot202632Kepler-22b>
+<img src=templates/img/Screenshot2026Kepler>
+<img src=templates/img/ScreenshotGJ504b_page>
