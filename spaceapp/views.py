@@ -40,7 +40,7 @@ def kepler_page(request):
         result_upper_string = upper_string(input_dto)
         print("DTO", result_upper_string)
 
-        # Дальше идет мой новый код с сохранением формы в джанго админ№№
+        # Дальше идет мой новый код с сохранением формы в джанго админ
         form = KeplerUserForm(request.POST)
 
         if form.is_valid():
